@@ -2,7 +2,7 @@
 /*
   @Controller: Fetchr Api Controller.
   @Author: Moath Mobarak.
-  @Version: 1.1.0
+  @Version: 1.0.1
 */
 class ControllerModuleFetchrApi extends Controller 
 {
