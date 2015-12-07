@@ -26,7 +26,7 @@ class ControllerModuleFetchrApi extends Controller
   {
     $config_data = $this->model_fetchrapi_fetchr->getConfig();
 
-    //Get title in form using fetchr language.
+    // Get language variables from fetchr_api language file.
     $data['heading_title'] = $this->language->get('heading_title');
     $data['text_form'] = $this->language->get('text_config');
 
@@ -41,7 +41,7 @@ class ControllerModuleFetchrApi extends Controller
 
     $data['button_save'] = $this->language->get('button_save');
     $data['button_cancel'] = $this->language->get('button_cancel');
-    $data['button_push'] = 'Push Orders';
+    $data['button_push'] = $this->language->get('button_push');
 
     // Show error msg.
     if (isset($this->session->data['api_error'])) {
