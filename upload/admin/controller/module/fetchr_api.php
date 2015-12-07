@@ -1,6 +1,6 @@
 <?php
 /*
-  @Controller: Fetchr Api Controller.
+  @Controller: Fetchr API Controller.
   @Author: Moath Mobarak.
   @Version: 1.1.0
 */
@@ -12,7 +12,7 @@ class ControllerModuleFetchrApi extends Controller
   public function index() 
   {
     $this->load->model('fetchrapi/fetchr');
-    //Install api congig table & added fetchr status.
+    // Install API config table & added Fetchr status.
     $install = $this->model_fetchrapi_fetchr->install();
 
     $this->load->language('module/fetchr_api');
@@ -41,9 +41,9 @@ class ControllerModuleFetchrApi extends Controller
 
     $data['button_save'] = $this->language->get('button_save');
     $data['button_cancel'] = $this->language->get('button_cancel');
-    $data['button_push'] = 'Push Order';
+    $data['button_push'] = 'Push Orders';
 
-    //Show error msg.
+    // Show error msg.
     if (isset($this->session->data['api_error'])) {
       $data['api_error'] = $this->session->data['api_error'];
 
@@ -70,7 +70,7 @@ class ControllerModuleFetchrApi extends Controller
       $data['error_password'] = '';
     }
 
-    //Show breadcrumbs.
+    // Show breadcrumbs.
     $data['breadcrumbs'] = array();
 
     $data['breadcrumbs'][] = array(
@@ -83,14 +83,14 @@ class ControllerModuleFetchrApi extends Controller
       'href' => $this->url->link('module/fetchr_api', 'token=' . $this->session->data['token'], 'SSL')
     );
 
-    //Push, Save & Cancel button.
+    // Push, Save & Cancel button.
     $data['push'] = $this->url->link('module/fetchr_api/orderList', 'token=' . $this->session->data['token'], 'SSL');
    
     $data['action'] = $this->url->link('module/fetchr_api/add', 'token=' . $this->session->data['token'], 'SSL');
 
     $data['cancel'] = $this->url->link('extension/module', 'token=' . $this->session->data['token'], 'SSL');
 
-    //Fill data in form.
+    // Fill data in form.
     foreach ($config_data as $key => $value) {
       if ($value['key_config'] == 'username') {
           $data['username'] = $value['value'];
@@ -169,12 +169,12 @@ class ControllerModuleFetchrApi extends Controller
       
     }
 
-    //Fetch orders based status 'Ready for Pick up'.
+    // Fetch orders based on status 'Ready for Pick up'.
     $orders = $this->model_fetchrapi_fetchr->getOrders();
     
     if (!empty($orders)) {
    
-      //Service type = 1 (Fulfilment+Delivery), Service type = 0 (Delivery).
+      // Service type = 1 (Fulfilment+Delivery), Service type = 0 (Delivery).
       if ($servicetype == 1) {
 
         foreach($orders as $key => $order) 
@@ -228,7 +228,7 @@ class ControllerModuleFetchrApi extends Controller
           unset($datalist);
         }        
         
-        //If count order = 1 go view order else go order list.
+        // If count order = 1 go view order else go order list.
         if (count($orders) == 1) {
           $this->response->redirect($this->url->link('sale/order/info', 'token=' . $this->session->data['token']. '&order_id=' . $orders[0]['order_id'], 'SSL'));
         }else{
@@ -263,7 +263,7 @@ class ControllerModuleFetchrApi extends Controller
 
         $this->send_Delivry_ToErp($datalist);
         
-        //If count order = 1 go view order else go order list.
+        // If count order = 1 go view order else go order list.
         if (count($orders) == 1) {
           $this->response->redirect($this->url->link('sale/order/info', 'token=' . $this->session->data['token']. '&order_id=' . $orders[0]['order_id'], 'SSL'));
         }else{
@@ -277,7 +277,7 @@ class ControllerModuleFetchrApi extends Controller
 
   }
 
-  //Fulfilment+Delivery send To ERP.
+  // Fulfilment+Delivery send To ERP.
   protected function send_Fulfilment_Delivery_ToErp($data, $orderId, $username, $password)
   {
     $response = null;
@@ -323,7 +323,7 @@ class ControllerModuleFetchrApi extends Controller
             
   }
 
-  //Delivery send To ERP.
+  // Delivery send To ERP.
   protected function send_Delivry_ToErp($data)
   {
     $response = null;
@@ -382,7 +382,7 @@ class ControllerModuleFetchrApi extends Controller
     return !$this->error;
   }
 
-  //Fuction handle error code return API and show error msg.
+  // Fuction handle error code return API and show error msg.
   public function errorCode($code = '')
   {
     $msg = '';
