@@ -44,7 +44,7 @@ Download opencart extension file from here
 
 ### Account Type
 - **Staging** if you are testing 
-- **Live** if you are using Fetchr actively for your orders
+- **Live** if you are ready to use Fetchr for your orders
 
 ### Service Type
 - **Fulfillment + Delivery** for warehouse and delivery service.
