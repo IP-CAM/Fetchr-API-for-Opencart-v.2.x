@@ -10,8 +10,8 @@ $_['heading_title']       = 'Fetchr API';
 // Text
 $_['text_success']        = 'Success: API configration successfully added!';
 $_['text_config']         = 'Configration';
-$_['text_delivery']       = 'Delivery';
-$_['text_fulfildelivery'] = 'Fulfilment+Delivery';
+$_['text_delivery']       = 'Delivery only';
+$_['text_fulfildelivery'] = 'Fulfilment + Delivery';
 $_['text_live']           = 'Live';
 $_['text_staging']        = 'Staging';
 
@@ -35,3 +35,6 @@ $_['error_password']   	= 'Password required and must be between 4 and 20 charac
 $_['error_accounttype'] = 'Account Type not mentioned!';
 $_['error_servicetype'] = 'Service Type not mentioned!';
 $_['error_api']  	      = '';
+
+// Buttons
+$_['button_push']  	    = 'Push Orders';
