@@ -1,4 +1,3 @@
-
 Fetchr API for OpenCart
 ---
 Fetchr API extension for Opencart creates connectivity between your OpenCart website and Fetchr to share order information. 
@@ -48,7 +47,8 @@ Enter the details, then Click Save button, as shown in the following figure.
 
 ![Image of API](http://support.fetchr.us/hc/en-us/article_attachments/202249402/image00.png)
 
-## Push Order
+## Push Orders
+You need to 'Push Orders' from your OpenCart store to the Fetchr site in order to be able to manage them there. 
 
     Caution:
     Test Fetchr in staging mode before go to live.
