@@ -18,20 +18,19 @@ You can download the _official_ Fetchr API opencart extension file from here:
 
 1. Extract the file to your local machine.
 2. Login as Admin.
-3. Go to Extensions > Extensions Installer > Upload file (fetchr.ocmod.xml).
-4. Go Extensions > Modifications > Click Refresh button.
-5. Extensions > Extensions Installer > Upload file (fetchr_api_1.1.0.ocmod.zip).
-6. Go Extensions > Modules, find Fetchr API module and Click install button.
+3. Go to _Extensions > Extensions Installer_ > Upload file (fetchr.ocmod.xml).
+4. Go to _Extensions > Modifications_ > Click Refresh button.
+5. Go to_Extensions > Extensions Installer_ > Upload file (fetchr_api_1.1.0.ocmod.zip).
+6. Go to _Extensions > Modules_, find Fetchr API module and Click install button.
 7. After installing Fetchr OpenCart extension, Click edit button to configure.
+
+Note: fetchr.ocmod.xml is the same as the [QuickFix for local copy by iSenseLab][localcopy]. If you have that already installed, skip steps 3 and 4.
 
 ## Configuration
 
     Caution:
     ALWAYS remember to make a full database/files backup before installing any new modules!
     
-    Note:
-    In this interface you find 2 type of services.
-
 ### Account Type
 - **Staging** if you are testing 
 - **Live** if you are ready to use Fetchr for your orders
@@ -61,5 +60,5 @@ You need to 'Push Orders' from your OpenCart store to the Fetchr site in order t
 
 [download]: http://support.fetchr.us/hc/en-us/articles/205732391-Opencart-Extension-V1-0
 [documentation]: http://support.fetchr.us/hc/en-us/article_attachments/202237701/OpenCart-API-Extension_InstallationGuide_V1.0.pdf
-    
+[localcopy]: http://www.opencart.com/index.php?route=extension/extension/info&extension_id=18892
 
