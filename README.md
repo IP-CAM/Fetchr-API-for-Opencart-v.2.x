@@ -20,7 +20,7 @@ You can download the _official_ Fetchr API opencart extension file from here:
 2. Login as Admin.
 3. Go to _Extensions > Extensions Installer_ > Upload file (fetchr.ocmod.xml).
 4. Go to _Extensions > Modifications_ > Click Refresh button.
-5. Go to_Extensions > Extensions Installer_ > Upload file (fetchr_api_1.1.0.ocmod.zip).
+5. Go to _Extensions > Extensions Installer_ > Upload file (fetchr_api_1.1.0.ocmod.zip).
 6. Go to _Extensions > Modules_, find Fetchr API module and Click install button.
 7. After installing Fetchr OpenCart extension, Click edit button to configure.
 
