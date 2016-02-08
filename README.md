@@ -22,15 +22,15 @@ Download the [latest release](https://github.com/aamnah/OpenCart-Fetchr/releases
     Caution:
     ALWAYS remember to make a full database/files backup before installing any new modules!
     
-### Account Type
+#### Account Type
 - **Staging** if you are testing 
 - **Live** if you are ready to use Fetchr for your orders
 
-### Service Type
+#### Service Type
 - **Fulfillment + Delivery** for warehouse and delivery service.
 - **Delivery** Only for delivery services.
 
-### Username & Password
+#### Username & Password
 Your login credentials as provided by Fetchr.
 
 Enter the details, then Click Save button, as shown in the following figure.
