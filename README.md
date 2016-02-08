@@ -5,7 +5,7 @@ Fetchr API extension for Opencart creates connectivity between your OpenCart web
 
 ## Download
 
-Download the latest from the [releases](https://github.com/aamnah/OpenCart-Fetchr/releases) page.
+Download the [latest release](https://github.com/aamnah/OpenCart-Fetchr/releases).
 
 The _official_ Fetchr API opencart extension file can be downloaded [here](http://support.fetchr.us/hc/en-us/articles/205732391-Opencart-Extension-V1.0.0)]
 
