@@ -13,7 +13,7 @@
 				<div class="pull-right">
 			]]></search>
 			<add position="after"><![CDATA[
-				<a href="http://menavip.com/" data-toggle="tooltip" title="MENA VIP" class="btn btn-default"><i class="fa fa-globe"></i></a>
+				<a href="http://menavip.com/" data-toggle="tooltip" title="MENA VIP" class="btn btn-default"><i class="fa fa-external-link"></i></a>
       ]]></add>
 		</operation>
 	</file>
