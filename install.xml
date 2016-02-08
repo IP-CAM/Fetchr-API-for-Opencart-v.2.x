@@ -9,10 +9,14 @@
 	<!-- Link for MENA VIP -->
 	<file path="admin/view/template/module/fetchr_api_form.php">
 		<operation error="log">
-			<search ><![CDATA[<div class="pull-right">]]></search>
-			<add position="after"><![CDATA[<a href="http://menavip.com/" data-toggle="tooltip" title="MENA VIP" class="btn btn-default"><i class="fa fa-globe"></i>
-        </a>]]></add>
+			<search ><![CDATA[
+				<div class="pull-right">
+			]]></search>
+			<add position="after"><![CDATA[
+				<a href="http://menavip.com/" data-toggle="tooltip" title="MENA VIP" class="btn btn-default"><i class="fa fa-globe"></i></a>
+      ]]></add>
 		</operation>
+	</file>
 
 	<!-- Localcopy  Quickfix-->
 	<file path="admin/controller/extension/installer.php">
