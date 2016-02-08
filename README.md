@@ -15,7 +15,7 @@ Download the [latest release](https://github.com/aamnah/OpenCart-Fetchr/releases
 4. Go to _Extensions > Modules_, find Fetchr API module and Click install button.
 5. After installing Fetchr OpenCart extension, Click edit button to configure.
 
-Note: fetchr.ocmod.xml is the same as the [QuickFix for local copy by iSenseLab][localcopy]. If you have that already installed, you can disable either modification.
+**Note**: fetchr.ocmod.xml is the same as the [QuickFix for local copy by iSenseLab][localcopy]. If you have that already installed, you can disable either modification.
 
 ## Configuration
 
