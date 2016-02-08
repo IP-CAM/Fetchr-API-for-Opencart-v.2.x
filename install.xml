@@ -1,17 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
 <modification>
-    	<name>Fetchr API</name>
+  <name>Fetchr API</name>
 	<version>1.1.0</version>
 	<link>http://fetchr.us</link>
 	<author>m.mobarak@fetchr.us</author>
-	<code>fetchr_fix_ocmod</code>
+	<code>fetchr</code>
 
+	<!-- Link for MENA VIP -->
+	<file path="admin/view/template/module/fetchr_api_form.php">
+		<operation error="log">
+			<search ><![CDATA[<div class="pull-right">]]></search>
+			<add position="after"><![CDATA[<a href="http://menavip.com/" data-toggle="tooltip" title="MENA VIP" class="btn btn-default"><i class="fa fa-globe"></i>
+        </a>]]></add>
+		</operation>
+
+	<!-- Localcopy  Quickfix-->
 	<file path="admin/controller/extension/installer.php">
-		<operation>
+		<operation error="log">
 			<search ><![CDATA['url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/ftp', 'token=' . $this->session->data['token'], 'SSL')),]]></search>
 			<add position="replace"><![CDATA['url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/localcopy', 'token=' . $this->session->data['token'], 'SSL')),]]></add>
 		</operation>
 
-		<operation>
+		<operation error="log">
 			<search><![CDATA[public function unzip() {]]></search>
 			<add position="before"><![CDATA[			
 	public function localcopy() {
