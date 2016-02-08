@@ -2,29 +2,22 @@ Fetchr API for OpenCart
 ---
 Fetchr API extension for Opencart creates connectivity between your OpenCart website and Fetchr to share order information. 
 
-### Target Audience
-
-This documentation contains overview information on the solution level and very detailed technical information. The target audience consists of the following persons:
-
-- Technology consultants
-- System administrators
-
 
 ## Download
-You can download the _official_ Fetchr API opencart extension file from here:  
-[http://support.fetchr.us/hc/en-us/articles/205732391-Opencart-Extension-V1.0.0][download]
+
+Download the latest from the [releases](https://github.com/aamnah/OpenCart-Fetchr/releases) page.
+
+The _official_ Fetchr API opencart extension file can be downloaded [here](http://support.fetchr.us/hc/en-us/articles/205732391-Opencart-Extension-V1.0.0)]
 
 ## Installation 
 
-1. Extract the file to your local machine.
-2. Login as Admin.
-3. Go to _Extensions > Extensions Installer_ > Upload file (fetchr.ocmod.xml).
-4. Go to _Extensions > Modifications_ > Click Refresh button.
-5. Go to _Extensions > Extensions Installer_ > Upload file (fetchr_api_1.1.0.ocmod.zip).
-6. Go to _Extensions > Modules_, find Fetchr API module and Click install button.
-7. After installing Fetchr OpenCart extension, Click edit button to configure.
+1. Login as Admin.
+2. Go to _Extensions > Extensions Installer_ > Upload file (fetchr_api_1.1.1.ocmod.zip).
+3. Go to _Extensions > Modifications_ > Click Refresh button.
+4. Go to _Extensions > Modules_, find Fetchr API module and Click install button.
+5. After installing Fetchr OpenCart extension, Click edit button to configure.
 
-Note: fetchr.ocmod.xml is the same as the [QuickFix for local copy by iSenseLab][localcopy]. If you have that already installed, skip steps 3 and 4.
+Note: fetchr.ocmod.xml is the same as the [QuickFix for local copy by iSenseLab][localcopy]. If you have that already installed, you can disable either modification.
 
 ## Configuration
 
