@@ -95,26 +95,15 @@ class ControllerModuleFetchrApi extends Controller
       if ($value['key_config'] == 'username') {
           $data['username'] = $value['value'];
 
-      } else {
-        $data['username'] = '';
-      }
-
-      if ($value['key_config'] == 'password') {
+      }elseif ($value['key_config'] == 'password') {
           $data['password'] = $value['value'];
 
-      } else {
-        $data['password'] = '';
-      }
-
-      if ($value['key_config'] == 'servicetype') {
+      } elseif ($value['key_config'] == 'servicetype') {
           $data['servicetype'] = $value['value'];
 
-      } 
-      if ($value['key_config'] == 'accounttype') {
+      } elseif ($value['key_config'] == 'accounttype') {
           $data['accounttype'] = $value['value'];
 
-      } else {
-        $data['accounttype'] = '';
       }
     }
 
