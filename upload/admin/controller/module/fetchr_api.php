@@ -168,6 +168,21 @@ class ControllerModuleFetchrApi extends Controller
 
         foreach($orders as $key => $order) 
         {
+          switch ($order['payment_code']) {
+              case 'cashondelivery':
+              case 'phoenix_cashondelivery':
+                  $paymentType    = 'COD';
+              break;
+              case 'ccsave':
+                  $paymentType    = 'CCOD';
+              break;
+              case 'paypal':
+              case 'pp_express':
+              default:
+                  $paymentType    = 'cd';
+              break;
+          }
+
           $item_list = [];
 
           $products = $this->model_fetchrapi_fetchr->getOrderProducts($order['order_id']);
@@ -201,7 +216,7 @@ class ControllerModuleFetchrApi extends Controller
                   'status' => '',
                   'discount' => 0,
                   'grand_total' => $order['total'],
-                  'payment_method' => ($order['payment_code'] == 'GOP_COD') ? 'cod' : $order['payment_code'],
+                  'payment_method' => $paymentType,
                   'order_id' => $order['order_id'],
                   'customer_firstname' => $order['firstname'],
                   'customer_lastname' => $order['lastname'],
@@ -212,7 +227,7 @@ class ControllerModuleFetchrApi extends Controller
                 )
               )
           );
-          
+
           $this->send_Fulfilment_Delivery_ToErp($datalist, $order['order_id'], $username, $password);
           unset($datalist);
         }        
@@ -228,6 +243,20 @@ class ControllerModuleFetchrApi extends Controller
         
         foreach($orders as $key => $order)
         {
+          switch ($order['payment_code']) {
+              case 'cod':
+                  $paymentType    = 'COD';
+              break;
+              case 'ccsave':
+                  $paymentType    = 'CCOD';
+              break;
+              case 'paypal':
+              case 'pp_express':
+              default:
+                  $paymentType    = 'cd';
+              break;
+          }
+
           $data[] = array(
               'order_reference'    => $order['order_id'],
               'name'    => $order['firstname'] . ' ' . $order['lastname'],
@@ -235,13 +264,13 @@ class ControllerModuleFetchrApi extends Controller
               'phone_number'    => $order['telephone'],
               'address'    => $order['payment_address_1'],
               'city'   => $order['payment_city'],
-              'payment_type'   => ($order['payment_code'] == 'GOP_COD') ? 'cod' : $order['payment_code'],
-              'amount'   => $order['total'],
+              'payment_type'   => $paymentType,
+              'amount'   => ($paymentType == 'COD') ? $order['total'] : '0',
               'description'   => 'None',
               'comments'  =>  $order['comment']
           );
         }
-        
+
         $datalist = array(
           'username' => $username,
           'password' => $password, 
@@ -260,7 +289,7 @@ class ControllerModuleFetchrApi extends Controller
         }
       }
     }else{
-      $this->session->data['api_error'] = 'Warning: Not found orders push!';
+      $this->session->data['api_error'] = 'Warning: No orders found to push, please make sure that the order status is "Ready for pickup" in order to push it!';
       $this->response->redirect($this->url->link('module/fetchr_api/', 'token=' . $this->session->data['token'], 'SSL'));
     }
 
@@ -403,6 +432,9 @@ class ControllerModuleFetchrApi extends Controller
       case 1009:
         $msg = 'Error: Description is missing in one of the posted orders.';
         break;
+      case 1010:
+        $msg = 'Error: Payment type is missing/invalid in the posted';
+        break;  
       case 1011:
         $msg = 'Error: Method name not found.';
         break;
