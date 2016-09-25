@@ -257,6 +257,9 @@ class ControllerModuleFetchrApi extends Controller
               break;
           }
 
+          //remove html tags
+          $product_desc = strip_tags(html_entity_decode($order['description']));
+          
           $data[] = array(
               'order_reference'    => $order['order_id'],
               'name'    => $order['firstname'] . ' ' . $order['lastname'],
@@ -266,7 +269,7 @@ class ControllerModuleFetchrApi extends Controller
               'city'   => $order['payment_city'],
               'payment_type'   => $paymentType,
               'amount'   => ($paymentType == 'COD') ? $order['total'] : '0',
-              'description'   => 'None',
+              'description'   => 'Product Name: '.$order['name'].' - Product Description: '.$product_desc,
               'comments'  =>  $order['comment']
           );
         }
@@ -361,7 +364,7 @@ class ControllerModuleFetchrApi extends Controller
 
       if(!is_array($decoded_response))
           return $response;
-
+      
       //IF Tracking number found Save in order and change status to 'Fetchr Shipping'.
       foreach ($data['data'] as $key => $value) {
         if (!empty($decoded_response[$value['order_reference']]) && $decoded_response['status'] == 'success') {
