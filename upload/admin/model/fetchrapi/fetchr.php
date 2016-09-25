@@ -56,7 +56,14 @@ class ModelFetchrapiFetchr extends Model {
 
 	public function getOrders() 
 	{
-        $query = $this->db->query("SELECT order_id, store_id, firstname, lastname, email, telephone, payment_address_1, payment_city, total, payment_method, payment_code, comment, customer_id FROM `" . DB_PREFIX . "order` 
+		/*
+		$old_query = "SELECT order_id, store_id, firstname, lastname, email, telephone, payment_address_1, payment_city, total, payment_method, payment_code, comment, customer_id FROM `" . DB_PREFIX . "order` 
+        	LEFT JOIN oc_order_status ON oc_order.order_status_id = oc_order_status.order_status_id
+			WHERE oc_order_status.`name` = 'Ready for Pick up'";
+		*/
+        $query = $this->db->query("SELECT oc_order.order_id, oc_order.store_id, oc_order.firstname, oc_order.lastname, oc_order.email, oc_order.telephone, oc_order.payment_address_1, oc_order.payment_city, oc_order.total, oc_order.payment_method, oc_order.payment_code, oc_order.comment, oc_order.customer_id,pd.description, op.name FROM `" . DB_PREFIX . "order`
+        	INNER JOIN oc_order_product AS op ON oc_order.order_id = op.order_id
+        	INNER JOIN oc_product_description AS pd ON op.product_id = pd.product_id
         	LEFT JOIN oc_order_status ON oc_order.order_status_id = oc_order_status.order_status_id
 			WHERE oc_order_status.`name` = 'Ready for Pick up'");
 
