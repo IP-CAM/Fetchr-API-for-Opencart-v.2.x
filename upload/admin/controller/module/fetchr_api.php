@@ -293,7 +293,7 @@ class ControllerModuleFetchrApi extends Controller
       }
     }else{
       $this->session->data['api_error'] = 'Warning: No orders found to push, please make sure that the order status is "Ready for pickup" in order to push it!';
-      $this->response->redirect($this->url->link('module/fetchr_api/', 'token=' . $this->session->data['token'], 'SSL'));
+      $this->response->redirect($this->url->link('extension/module/fetchr_api/', 'token=' . $this->session->data['token'], 'SSL'));
     }
 
   }
@@ -373,7 +373,7 @@ class ControllerModuleFetchrApi extends Controller
           
         }else{
           $this->session->data['api_error'] = $this->errorCode($decoded_response['error_code']);
-          $this->response->redirect($this->url->link('module/fetchr_api/', 'token=' . $this->session->data['token'], 'SSL'));
+          $this->response->redirect($this->url->link('extension/module/fetchr_api', 'token=' . $this->session->data['token'], 'SSL'));
 
         }
       }
